@@ -1,0 +1,6 @@
+test-env: [
+  TS_NODE_PROJECT=./test/tsconfig.json
+]
+ts: true
+jsx: false
+coverage: true

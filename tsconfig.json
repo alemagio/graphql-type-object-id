@@ -1,0 +1,13 @@
+{
+  "extends": "fox1t-tsconfig",
+  "compilerOptions": {
+    "outDir": "dist",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./typings"
+    ]
+  },
+  "include": [
+    "./src/**/*.ts"
+  ]
+}
