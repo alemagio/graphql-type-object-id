@@ -17,6 +17,7 @@ const typeDefs = gql`
 const resolvers = {
   ObjectId: GraphQLObjectId,
   Query: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     testObjectId(_: any, { id }: { id: string }) {
       return id
     },
