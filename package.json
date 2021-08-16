@@ -41,9 +41,11 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "fox1t-tsconfig": "^0.2.0",
+    "graphql": "^15.5.1",
     "graphql-tag": "^2.12.5",
     "graphql-tools": "^8.1.0",
     "husky": "^7.0.1",
+    "mongodb": "^4.1.0",
     "prettier": "^2.3.2",
     "rimraf": "^3.0.2",
     "tap": "^15.0.9",
@@ -60,9 +62,9 @@
       "pre-commit": "npm run test && npm run build"
     }
   },
-  "dependencies": {
-    "graphql": "^15.5.1",
-    "mongodb": "^4.1.0"
+  "peerDependencies": {
+    "graphql": "15.x",
+    "mongodb": "4.x"
   },
   "directories": {
     "test": "test"
