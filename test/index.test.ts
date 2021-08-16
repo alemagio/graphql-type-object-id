@@ -2,9 +2,9 @@ import { test } from 'tap'
 import gql from 'graphql-tag'
 import { graphql } from 'graphql'
 import { makeExecutableSchema } from '@graphql-tools/schema'
+import { ObjectId } from 'mongodb'
 
 import { GraphQLObjectId } from '../src'
-import { ObjectId } from 'mongodb'
 
 const typeDefs = gql`
   scalar ObjectId
@@ -50,27 +50,6 @@ test(`should throw an error with invalid ObjectId`, async t => {
     errors?.[0].message,
     `Variable "$id" got invalid value "${id}"; Expected type "ObjectId". `,
   )
-})
-
-test(`should process a valid ObjectId`, async t => {
-  t.plan(2)
-
-  const id = new ObjectId()
-
-  const { errors, data } = await graphql({
-    schema,
-    source: `
-      query testObjectId($id: ObjectId!) {
-        testObjectId(id: $id)
-      }
-    `,
-    variableValues: {
-      id,
-    },
-  })
-
-  t.same(errors, undefined)
-  t.same(data?.testObjectId, id.toString())
 })
 
 test(`should process a valid ObjectId string`, async t => {
