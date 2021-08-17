@@ -1,4 +1,4 @@
-import { GraphQLScalarType, Kind } from 'graphql'
+import { ASTNode, GraphQLError, GraphQLScalarType, Kind, print } from 'graphql'
 
 import { parseValue, serialize } from './util'
 
@@ -7,11 +7,11 @@ export const GraphQLObjectId = new GraphQLScalarType({
   description: 'A valid MongoDB ObjectId',
   parseValue,
   serialize,
-  parseLiteral(ast) {
+  parseLiteral(ast: ASTNode) {
     if (ast.kind === Kind.STRING) {
       return parseValue(ast.value)
     }
-    throw new Error()
+    throw new GraphQLError(`Provided value "${print(ast)}" is not a valid ObjectId`, ast)
   },
 })
 

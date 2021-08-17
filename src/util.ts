@@ -1,4 +1,5 @@
 import { ObjectId } from 'mongodb'
+import { GraphQLError } from 'graphql'
 
 export function isValidStringObjectId(value: string): boolean {
   return (
@@ -16,14 +17,14 @@ export function isValidObjectId(value: ObjectId): boolean {
 
 export function parseValue(value: string): ObjectId {
   if (!isValidStringObjectId(value)) {
-    throw new Error()
+    throw new GraphQLError(`Provided value "${value}" is not a valid ObjectId`)
   }
   return new ObjectId(value)
 }
 
 export function serialize(value: ObjectId): string {
   if (!isValidObjectId(value)) {
-    throw new Error()
+    throw new GraphQLError(`Provided value "${value}" is not a valid ObjectId`)
   }
   return value.toString()
 }

@@ -48,7 +48,7 @@ test(`should throw an error with invalid ObjectId`, async t => {
 
   t.same(
     errors?.[0].message,
-    `Variable "$id" got invalid value "${id}"; Expected type "ObjectId". `,
+    `Variable "$id" got invalid value "${id}"; Provided value "${id}" is not a valid ObjectId`,
   )
 })
 
@@ -87,7 +87,7 @@ test(`should throw an error with invalid ObjectId as literal`, async t => {
     `,
   })
 
-  t.same(errors?.[0].message, `Expected value of type "ObjectId!", found "invalid"; `)
+  t.same(errors?.[0].message, `Provided value "${id}" is not a valid ObjectId`)
 })
 
 test(`should throw an error with invalid String as literal`, async t => {
@@ -102,7 +102,7 @@ test(`should throw an error with invalid String as literal`, async t => {
     `,
   })
 
-  t.same(errors?.[0].message, `Expected value of type "ObjectId!", found 999; `)
+  t.same(errors?.[0].message, `Provided value "999" is not a valid ObjectId`)
 })
 
 test(`should process a valid ObjectId as literal`, async t => {

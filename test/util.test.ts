@@ -58,7 +58,11 @@ test('isValidObjectId: should accept valid ObjectId string', t => {
 test('parseValue: should throw and error with invalid ObjectId', t => {
   t.plan(1)
 
-  t.throws(parseValue.bind(null, 'invalid'))
+  try {
+    parseValue('invalid')
+  } catch (err) {
+    t.same(err.message, `Provided value "invalid" is not a valid ObjectId`)
+  }
 })
 test('parseValue: should return an ObjectId', t => {
   t.plan(1)
@@ -71,7 +75,11 @@ test('parseValue: should return an ObjectId', t => {
 test('serialize: should throw and error with invalid ObjectId', t => {
   t.plan(1)
 
-  t.throws(serialize.bind(null, 'invalid' as unknown as ObjectId))
+  try {
+    serialize('invalid' as unknown as ObjectId)
+  } catch (err) {
+    t.same(err.message, `Provided value "invalid" is not a valid ObjectId`)
+  }
 })
 test('serialize: should return an ObjectId', t => {
   t.plan(1)
