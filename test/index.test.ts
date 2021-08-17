@@ -19,7 +19,7 @@ const resolvers = {
   Query: {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     testObjectId(_: any, { id }: { id: string }) {
-      return id
+      return new ObjectId(id)
     },
   },
 }

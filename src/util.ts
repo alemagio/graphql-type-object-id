@@ -8,11 +8,7 @@ export function isValidStringObjectId(value: string): boolean {
 }
 
 export function isValidObjectId(value: ObjectId): boolean {
-  return (
-    value instanceof ObjectId &&
-    ObjectId.isValid(value) &&
-    new ObjectId(value).toString() === value.toString()
-  )
+  return ObjectId.isValid(value) && new ObjectId(value).toString() === value.toString()
 }
 
 export function parseValue(value: string): ObjectId {
