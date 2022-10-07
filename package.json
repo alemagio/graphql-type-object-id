@@ -1,6 +1,6 @@
 {
   "name": "graphql-type-object-id",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "A graphql scalar type for MongoDB ObjectId.",
   "main": "./dist",
   "types": "./dist",
@@ -34,19 +34,19 @@
     "@graphql-tools/schema": "^8.1.0",
     "@types/node": "^16.6.1",
     "@types/tap": "^15.0.5",
-    "@typescript-eslint/eslint-plugin": "^4.29.1",
-    "@typescript-eslint/parser": "^4.29.1",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
     "chokidar-cli": "^3.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "fox1t-tsconfig": "^0.2.0",
-    "graphql": "^15.5.1",
+    "graphql": "^16.6.0",
     "graphql-tag": "^2.12.5",
     "graphql-tools": "^8.1.0",
     "husky": "^7.0.1",
     "mongodb": "^4.1.0",
-    "prettier": "^2.3.2",
+    "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "tap": "^15.0.9",
     "tap-mocha-reporter": "^5.0.1",
@@ -63,7 +63,7 @@
     }
   },
   "peerDependencies": {
-    "graphql": "15.x",
+    "graphql": "16.x",
     "mongodb": "4.x"
   },
   "directories": {
