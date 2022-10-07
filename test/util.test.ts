@@ -61,7 +61,7 @@ test('parseValue: should throw and error with invalid ObjectId', t => {
   try {
     parseValue('invalid')
   } catch (err) {
-    t.same(err.message, `Provided value "invalid" is not a valid ObjectId`)
+    t.same((err as Error).message, `Provided value "invalid" is not a valid ObjectId`)
   }
 })
 test('parseValue: should return an ObjectId', t => {
@@ -78,7 +78,7 @@ test('serialize: should throw and error with invalid ObjectId', t => {
   try {
     serialize('invalid' as unknown as ObjectId)
   } catch (err) {
-    t.same(err.message, `Provided value "invalid" is not a valid ObjectId`)
+    t.same((err as Error).message, `Provided value "invalid" is not a valid ObjectId`)
   }
 })
 test('serialize: should return an ObjectId', t => {
